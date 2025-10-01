@@ -1,8 +1,8 @@
 # FILE NAME - firewall_traffic_analyzer.py
 
-# NAME: 
-# DATE: 
-# BRIEF DESCRIPTION:  
+# NAME: Nicholas Sheppard
+# DATE: 10/01/2025
+# BRIEF DESCRIPTION:  A program that considers two pieces of data and makes a risk analysis.
 
 
 
@@ -15,7 +15,34 @@
 
 ########## ENTER YER CODE BELOW THIS LINE ##########
 
+def main():
+    firewall_traffic_analyzer()
 
+def firewall_traffic_analyzer():
+    print("=== Network Traffic Security Analyzer ===")
+    print()
+    port_number = int(input("Enter the port number (e.g., 80, 22, 443, 3389): "))
+    transfer_size = int(input("Enter the data transfer size in megabytes (MB): "))
+    print()
+    print("FIREWALL LOG:")
+    if port_number == 22 and transfer_size > 500:
+        print(f"Port: {port_number}, Transfer Size: {transfer_size} MB")
+        print("Risk Assessment: HIGH RISK: Potential unauthorized remote access detected!")
+    elif port_number == 80 and transfer_size >100:
+        print(f"Port: {port_number}, Transfer Size: {transfer_size} MB")
+        print("Risk Assessment: MEDIUM RISK: Large unencrypted data transfer detected.")
+    elif port_number == 443:
+        print(f"Port: {port_number}, Transfer Size: {transfer_size} MB")
+        print("Risk Assessment: LOW RISK: Secure encrypted transfer detected.")
+    else:
+        print(f"Port: {port_number}, Transfer Size: {transfer_size} MB")
+        print("Risk Assessment: UNKNOWN: Unrecognized traffic pattern.")
+    print("------------------------")
+    
+
+
+
+main()
 
 
 
@@ -90,7 +117,7 @@ Risk Assessment: UNKNOWN: Unrecognized traffic pattern.
 
 1. Did you get tripped up using the `or` or `and` operators? If so, how?
 
-
+No, they seemed pretty straight forward, at least for this project. 
 
 
 
