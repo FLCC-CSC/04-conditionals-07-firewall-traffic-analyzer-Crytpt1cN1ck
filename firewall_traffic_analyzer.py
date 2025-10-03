@@ -14,7 +14,7 @@
 
 
 ########## ENTER YER CODE BELOW THIS LINE ##########
-
+"""
 def main():
     firewall_traffic_analyzer()
 
@@ -39,12 +39,45 @@ def firewall_traffic_analyzer():
         print("Risk Assessment: UNKNOWN: Unrecognized traffic pattern.")
     print("------------------------")
     
+main()
+"""
+def main():
+    firewall_traffic_analyzer()
 
+def firewall_traffic_analyzer():
+    print("=== Network Traffic Security Analyzer ===")
+    print()
+    port_number = int(input("Enter the port number (e.g., 80, 22, 443, 3389): "))
+    transfer_size = int(input("Enter the data transfer size in megabytes (MB): "))
+    print()
+    print("FIREWALL LOG:")
+    if port_number == 22:
+        if transfer_size > 500:
+            print(f"Port: {port_number}, Transfer Size: {transfer_size} MB")
+            print("Risk Assessment: HIGH RISK: Potential unauthorized remote access detected!")
+        else:
+            print(f"Port: {port_number}, Transfer Size: {transfer_size} MB")
+            print("Risk Assessment: UNKNOWN: Unrecognized traffic pattern.")
+    elif port_number == 80:
+        if transfer_size > 100:
+            print(f"Port: {port_number}, Transfer Size: {transfer_size} MB")
+            print("Risk Assessment: MEDIUM RISK: Large unencrypted data transfer detected.")
+        else:
+            print(f"Port: {port_number}, Transfer Size: {transfer_size} MB")
+            print("Risk Assessment: UNKNOWN: Unrecognized traffic pattern.")
+    elif port_number == 443:
+        print(f"Port: {port_number}, Transfer Size: {transfer_size} MB")
+        print("Risk Assessment: LOW RISK: Secure encrypted transfer detected.")
+    else:
+        print(f"Port: {port_number}, Transfer Size: {transfer_size} MB")
+        print("Risk Assessment: UNKNOWN: Unrecognized traffic pattern.")
+    print("------------------------")
+
+
+    
 
 
 main()
-
-
 
 
 
