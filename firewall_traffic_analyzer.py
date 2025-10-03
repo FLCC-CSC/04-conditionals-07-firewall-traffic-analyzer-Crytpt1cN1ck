@@ -27,7 +27,7 @@ def firewall_traffic_analyzer():
     print("FIREWALL LOG:")
     if port_number == 22 or port_number == 3389:
         print(f"Port: {port_number}, Transfer Size: {transfer_size} MB")
-        print("Risk Assessment: UNKNOWN: Unrecognized traffic pattern.")
+        print("Risk Assessment: HIGH RISK: Potential unauthorized remote access detected!")
     elif port_number == 80:
         if transfer_size > 100:
             print(f"Port: {port_number}, Transfer Size: {transfer_size} MB")
